@@ -1,0 +1,8 @@
+# Axelera Voyager SDK packages
+# Install via the Axelera SDK installer (not available on PyPI):
+#   axelera-runtime==1.6.0
+#   axelera-rt==1.6.0
+
+# Standard dependencies (install with pip)
+opencv-python>=4.8.0
+numpy>=1.24.0

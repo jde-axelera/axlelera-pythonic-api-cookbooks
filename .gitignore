@@ -1,0 +1,48 @@
+# Compiled Axelera models
+*_axelera_model/
+build/
+*.axm
+*.axnet
+
+# PyTorch model weights
+*.pt
+*.pth
+*.onnx
+
+# Large binary artifacts
+*.bin
+*.elf
+
+# Python virtual environment
+pythonic_api/
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Distribution / packaging
+*.egg-info/
+dist/
+*.egg
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env vars
+.env
+.env.local
