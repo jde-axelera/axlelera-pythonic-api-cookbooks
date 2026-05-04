@@ -333,7 +333,12 @@ def run(args: argparse.Namespace) -> None:
             t1 = time.perf_counter()
             raw = infer(tensor)
             t2 = time.perf_counter()
-            result = postprocess(raw)
+            # Segmentation models output [det_tensor, proto_tensor]; unpack into
+            # separate positional args so decode_segmentation receives both.
+            if isinstance(raw, (list, tuple)):
+                result = postprocess(*raw)
+            else:
+                result = postprocess(raw)
             t3 = time.perf_counter()
 
             pre_times.append(t1 - t0)
