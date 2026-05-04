@@ -17,7 +17,16 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import os
 import re
+
+# Set DISPLAY before cv2 is used. SSH sessions typically have no DISPLAY set,
+# but the X server socket is present. Auto-detect the first available one.
+if not os.environ.get('DISPLAY'):
+    from pathlib import Path as _P
+    _socks = sorted((_P('/tmp/.X11-unix')).glob('X*'))
+    if _socks:
+        os.environ['DISPLAY'] = f':{_socks[0].name[1:]}'
 import time
 from collections import deque
 from dataclasses import dataclass, field
